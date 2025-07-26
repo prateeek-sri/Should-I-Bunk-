@@ -30,7 +30,7 @@ export default function CreateSubject() {
   const fetchSemesters = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("/api/semesters", {
+      const res = await axios.get("https://should-i-bunk-enhk.onrender.com/api/semesters", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSemesters(res.data);
@@ -50,7 +50,7 @@ export default function CreateSubject() {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "/api/subjects",
+        "https://should-i-bunk-enhk.onrender.com/api/subjects",
         {
           name,
           code,

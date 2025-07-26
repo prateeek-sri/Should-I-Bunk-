@@ -26,7 +26,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post('/api/user/login', formData);
+      const res = await axios.post('https://should-i-bunk-enhk.onrender.com/api/user/login', formData);
       login(res.data.token);
       toast.success("Logged in successfully!");
       navigate('/dashboard');

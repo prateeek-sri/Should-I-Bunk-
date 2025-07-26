@@ -26,7 +26,7 @@ const Register = () => {
     setError('');
 
     try {
-      const res = await axios.post('/api/user/register', formData);
+      const res = await axios.post('https://should-i-bunk-enhk.onrender.com/api/user/register', formData);
       localStorage.setItem('token', res.data.token);
          toast.success("Registration successful!");
       navigate('/dashboard');
