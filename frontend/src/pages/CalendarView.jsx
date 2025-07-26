@@ -32,7 +32,7 @@ const CalendarView = () => {
         }
       );
       const res2 = await axios.get(
-        `/api/attendance/stats/${selectedSubject}`,
+        `https://should-i-bunk-enhk.onrender.com/api/attendance/stats/${selectedSubject}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
