@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss(),],
   server: {
     proxy: {
-      '/api': 'http://localhost:5000', // your Express backend URL
+      '/api': 'https://should-i-bunk-enhk.onrender.com',
     },
   },
 })
