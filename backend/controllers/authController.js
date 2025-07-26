@@ -59,7 +59,7 @@ export const login = async (req, res) => {
       user: { id: user._id, email: user.email, name: user.name }
     });
   } catch (error) {
-    res.status(500).json({ error: 'Server error' });
+    res.status(500).json({ error: 'Server error',error });
   }
 };
 export const getMe = async (req, res) => {
