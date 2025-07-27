@@ -8,14 +8,16 @@ import subjectRoutes from './routes/subjectRoutes.js';
 import attendanceRoutes from './routes/attendanceRoutes.js';
 import { connectToDb } from './utils/connectToDb.js';
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 dotenv.config();
 const app = express();
-app.use(cors({
-  origin: 'https://should-i-bunk-beta.vercel.app',
-  credentials: true,
-}));
+app.use(cors(
+  {
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
+  }
+));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

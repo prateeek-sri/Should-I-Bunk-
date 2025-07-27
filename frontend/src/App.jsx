@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
+import dotenv from "dotenv";
 import Register from "./pages/Register";
 import ManualAttendance from "./pages/ManualAttendance";
 import CreateSemester from "./pages/CreateSemester";
@@ -10,6 +11,7 @@ import CalendarView from "./pages/CalendarView";
 import Navbar from "./components/Navbar";
 import ProfilePage from "./pages/ProfilePage";
 import RequireAuth from "./components/RequireAuth";
+
 
 export default function App() {
   return (

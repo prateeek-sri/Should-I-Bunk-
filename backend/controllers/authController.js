@@ -34,7 +34,7 @@ export const register = async (req, res) => {
     });
   } catch (error) {
     console.error("Error in register:", error);
-    res.status(500).json({ error: 'Server error' });
+    res.status(500).json({ error: 'Server error',error });
   }
 };
 
@@ -64,7 +64,7 @@ export const login = async (req, res) => {
 };
 export const getMe = async (req, res) => {
   try {
-    const user = await User.find({ _id: req.user.userId }).select("username email");
+    const user = await User.find({ _id: req.user.userId })
     if (!user) return res.status(404).json({ error: "User not found" });
     res.json(user);
   } catch (err) {

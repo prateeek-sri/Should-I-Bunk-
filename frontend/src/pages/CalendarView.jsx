@@ -12,7 +12,7 @@ const CalendarView = () => {
   useEffect(() => {
     const fetchSubjects = async () => {
       const token = localStorage.getItem("token");
-      const res = await axios.get("https://should-i-bunk-enhk.onrender.com/api/subjects", {
+      const res = await axios.get("/api/subjects", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSubjects(res.data);
@@ -26,13 +26,13 @@ const CalendarView = () => {
 
       const token = localStorage.getItem("token");
       const res1 = await axios.get(
-        `https://should-i-bunk-enhk.onrender.com/api/attendance`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/attendance`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
       );
       const res2 = await axios.get(
-        `https://should-i-bunk-enhk.onrender.com/api/attendance/stats/${selectedSubject}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/attendance/stats/${selectedSubject}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

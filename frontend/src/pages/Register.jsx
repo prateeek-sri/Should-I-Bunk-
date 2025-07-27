@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { FaUser, FaLock } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
+import toast from 'react-hot-toast';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ const Register = () => {
     setError('');
 
     try {
-      const res = await axios.post('https://should-i-bunk-enhk.onrender.com/api/user/register', formData);
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/user/register`, formData);
       localStorage.setItem('token', res.data.token);
          toast.success("Registration successful!");
       navigate('/dashboard');

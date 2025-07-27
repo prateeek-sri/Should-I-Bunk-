@@ -18,7 +18,7 @@ const ManualAttendance = () => {
   useEffect(() => {
     const fetchSemesters = async () => {
       try {
-        const res = await axios.get("https://should-i-bunk-enhk.onrender.com/api/semesters", {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/semesters`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setSemesters(Array.isArray(res.data) ? res.data : []);
@@ -33,7 +33,7 @@ const ManualAttendance = () => {
   useEffect(() => {
     const fetchSubjects = async () => {
       try {
-        const res = await axios.get("https://should-i-bunk-enhk.onrender.com/api/subjects", {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/subjects`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -60,7 +60,7 @@ const ManualAttendance = () => {
     e.preventDefault();
     try {
       await axios.post(
-        "https://should-i-bunk-enhk.onrender.com/api/attendance",
+        `${import.meta.env.VITE_BACKEND_URL}/api/attendance`,
         { subjectId, date, status },
         {
           headers: {

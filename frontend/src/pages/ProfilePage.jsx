@@ -11,12 +11,13 @@ export default function ProfilePage() {
   useEffect(() => {
     const fetchUserAndSemesters = async () => {
       try {
-        const res = await axios.get("https://should-i-bunk-enhk.onrender.com/api/user/me", {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/user/me`, {
           headers: { Authorization: `Bearer ${token}` },
         });
+        console.log("User data fetched:", res.data[0]);
         setUser(res.data[0]);
 
-        const semesterRes = await axios.get("https://should-i-bunk-enhk.onrender.com/api/semesters", {
+        const semesterRes = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/semesters`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setSemesters(semesterRes.data);

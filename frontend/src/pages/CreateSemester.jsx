@@ -47,7 +47,7 @@ export default function CreateSemester() {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "https://should-i-bunk-enhk.onrender.com/api/semesters",
+        `${import.meta.env.VITE_BACKEND_URL}/api/semesters`,
         {
           name,
           startDate,

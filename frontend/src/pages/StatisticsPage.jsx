@@ -14,7 +14,7 @@ export default function StatisticsPage() {
   useEffect(() => {
     const fetchSemesters = async () => {
       try {
-        const res = await axios.get("https://should-i-bunk-enhk.onrender.com/api/semesters", {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/semesters`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setSemesters(res.data);
@@ -32,7 +32,7 @@ export default function StatisticsPage() {
       if (!selectedSemester) return;
       try {
         const res = await axios.get(
-          `https://should-i-bunk-enhk.onrender.com/api/subjects?semesterId=${selectedSemester}`,
+          `${import.meta.env.VITE_BACKEND_URL}/api/subjects?semesterId=${selectedSemester}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -51,7 +51,7 @@ export default function StatisticsPage() {
     if (!selectedSubject) return;
     try {
       const res = await axios.get(
-        `https://should-i-bunk-enhk.onrender.com/api/attendance/stats/${selectedSubject}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/attendance/stats/${selectedSubject}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
