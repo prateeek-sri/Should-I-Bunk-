@@ -12,7 +12,7 @@ const CalendarView = () => {
   useEffect(() => {
     const fetchSubjects = async () => {
       const token = localStorage.getItem("token");
-      const res = await axios.get("/api/subjects", {
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/subjects`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSubjects(res.data);
